@@ -19,7 +19,7 @@ const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
 const romanOf = (n) => {
   const hundreds = divmod(n, 100);
   const howManyHundreds = hundreds.quotient;
-  const hundredsPart = howManyHundreds > 0 ? "C" : "";
+  const hundredsPart = bar(hundreds.quotient, "C", "?", "?");
   const tens = divmod(hundreds.remainder, 10);
   const howManyTens = tens.quotient;
   const tensPart = bar(howManyTens, "X", "L", "C");
@@ -106,6 +106,7 @@ const examples = {
   99: "XCIX",
   100: "C",
   139: "CXXXIX",
+  214: "CCXIV",
 };
 
 for (const arabic of Object.keys(examples)) {
