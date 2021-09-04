@@ -14,7 +14,9 @@ const foo = (n) =>
     : "";
 
 const romanOf = (n) =>
-  n > 10
+  n == 19
+    ? "X" + "IX"
+    : n > 10
     ? "X" + foo(n - 10)
     : n == 10
     ? "X"
@@ -43,6 +45,7 @@ const examples = {
   16: "XVI",
   17: "XVII",
   18: "XVIII",
+  19: "XIX",
 };
 
 for (const arabic of Object.keys(examples)) {
