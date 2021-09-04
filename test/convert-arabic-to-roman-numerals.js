@@ -11,14 +11,12 @@ const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
     ? oneSymbol.repeat(n)
     : "";
 
-const foo = (n) => bar(n, "I", "V", "X");
-
 const romanOf = (n) => {
   const howManyTens = Math.floor(n / 10);
 
   const tensPart = bar(howManyTens, "X", "L", "C");
 
-  const fooPart = foo(n - howManyTens * 10);
+  const fooPart = bar(n - howManyTens * 10, "I", "V", "X");
 
   const roman = tensPart + fooPart;
 
