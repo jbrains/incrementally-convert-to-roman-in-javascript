@@ -27,12 +27,13 @@ const bigPattern = (n, powerOfTen, oneSymbol, fiveSymbol, tenSymbol) => {
 const romanOf = (n) => {
   const hundreds = divmod(n, 100);
   const hundredsPart = bar(hundreds.quotient, "C", "?", "?");
+  const xxx = bigPattern(n, 100, "C", "?", "?");
 
-  const tensPart = bigPattern(hundreds.remainder, 10, "X", "L", "C");
+  const tensPart = bigPattern(xxx.remainder, 10, "X", "L", "C");
 
   const onesPart = bigPattern(tensPart.remainder, 1, "I", "V", "X");
 
-  const parts = [hundredsPart, tensPart.roman, onesPart.roman];
+  const parts = [xxx.roman, tensPart.roman, onesPart.roman];
 
   const roman = parts.reduce((sum, each) => sum + each, []);
 
