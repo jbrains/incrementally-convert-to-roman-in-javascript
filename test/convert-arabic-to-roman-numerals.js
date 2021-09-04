@@ -13,7 +13,9 @@ const romanOf = (n) =>
     ? "V"
     : n == 4
     ? "IV"
-    : ones(n);
+    : n >= 1
+    ? ones(n)
+    : "Can't write numbers below 1 as roman numerals. They didn't know how.";
 
 const examples = {
   1: "I",
