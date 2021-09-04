@@ -22,7 +22,7 @@ const romanOf = (n) => {
   const hundredsPart = bar(hundreds.quotient, "C", "?", "?");
   const tens = divmod(hundreds.remainder, 10);
   const howManyTens = tens.quotient;
-  const tensPart = bar(howManyTens, "X", "L", "C");
+  const tensPart = bar(tens.quotient, "X", "L", "C");
   const onesPart = bar(tens.remainder, "I", "V", "X");
 
   const roman = hundredsPart + tensPart + onesPart;
