@@ -1,11 +1,12 @@
 import { test, skip } from "zora";
 
-const romanOf = (n) => "I".repeat(n);
+const romanOf = (n) => (n == 4 ? "IV" : "I".repeat(n));
 
 const examples = {
   1: "I",
   2: "II",
   3: "III",
+  4: "IV",
 };
 
 for (const arabic of Object.keys(examples)) {
