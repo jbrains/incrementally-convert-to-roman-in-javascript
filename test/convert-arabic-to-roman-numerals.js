@@ -17,7 +17,8 @@ const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
     : "";
 
 const romanOf = (n) => {
-  const howManyHundreds = Math.floor(n / 100);
+  const hundreds = divmod(n, 100);
+  const howManyHundreds = hundreds.quotient;
   const hundredsPart = howManyHundreds > 0 ? "C" : "";
   const howManyTens = Math.floor((n - howManyHundreds * 100) / 10);
   const tensPart = bar(howManyTens, "X", "L", "C");
