@@ -1,7 +1,9 @@
 import { test, skip } from "zora";
 
+const ones = (n) => "I".repeat(n);
+
 const romanOf = (n) =>
-  n == 6 ? "VI" : n == 5 ? "V" : n == 4 ? "IV" : "I".repeat(n);
+  n == 6 ? "V" + ones(1) : n == 5 ? "V" : n == 4 ? "IV" : "I".repeat(n);
 
 const examples = {
   1: "I",
