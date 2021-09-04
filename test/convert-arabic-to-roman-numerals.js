@@ -18,7 +18,7 @@ const foo = (n) =>
     : "";
 
 const romanOf = (n) =>
-  n == 2 * 10 + 1
+  n > 2 * 10
     ? tens(2) + foo(n - 2 * 10)
     : n == 2 * 10
     ? tens(2)
@@ -52,6 +52,14 @@ const examples = {
   19: "XIX",
   20: "XX",
   21: "XXI",
+  22: "XXII",
+  23: "XXIII",
+  24: "XXIV",
+  25: "XXV",
+  26: "XXVI",
+  27: "XXVII",
+  28: "XXVIII",
+  29: "XXIX",
 };
 
 for (const arabic of Object.keys(examples)) {
