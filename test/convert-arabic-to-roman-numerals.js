@@ -31,6 +31,7 @@ const romanOf = (n) => {
     { powerOfTen: 1, one: "I", five: "V", ten: "X" },
   ];
 
+  // REFACTOR State monad, one day, when I understand it better.
   var arabicRemaining = n;
   const parts = levels.map((level) => {
     const part = bigPattern(arabicRemaining, level);
