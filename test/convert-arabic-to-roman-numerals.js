@@ -44,9 +44,18 @@ const romanOf = (n) => {
       ? bigPattern(level1Part.remainder, levels[2])
       : { roman: "", remainder: 0 };
 
+  var arabicRemaining = n;
+  const newParts = levels.map((level) => {
+    const xxx = bigPattern(arabicRemaining, level);
+    arabicRemaining = xxx.remainder;
+    return xxx;
+  });
+
   const parts = [level0Part.roman, level1Part.roman, level2Part.roman];
 
-  const roman = parts.reduce((sum, each) => sum + each, []);
+  const roman = newParts
+    .map((each) => each.roman)
+    .reduce((sum, each) => sum + each, []);
 
   return roman.length == 0
     ? "Can't write numbers below 1 as roman numerals. They didn't know how."
