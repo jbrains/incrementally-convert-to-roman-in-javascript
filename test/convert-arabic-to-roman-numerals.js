@@ -7,13 +7,13 @@ const romanOf = (n) =>
     ? "X"
     : n == 10 - 1
     ? "IX"
-    : n >= 6
+    : n >= 5 + 1
     ? "V" + ones(n - 5)
     : n == 5
     ? "V"
     : n == 5 - 1
     ? "IV"
-    : n >= 1
+    : n >= 0 + 1
     ? ones(n)
     : "Can't write numbers below 1 as roman numerals. They didn't know how.";
 
