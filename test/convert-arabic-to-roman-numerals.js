@@ -16,7 +16,7 @@ const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
     ? oneSymbol.repeat(n)
     : "";
 
-const bigPattern = (n, { powerOfTen, one, five, ten }) => {
+const convertAtAPowerOfTen = (n, { powerOfTen, one, five, ten }) => {
   const result = divmod(n, powerOfTen);
   return {
     roman: bar(result.quotient, one, five, ten),
@@ -34,7 +34,7 @@ const romanOf = (n) => {
   // REFACTOR State monad, one day, when I understand it better.
   var arabicRemaining = n;
   const parts = levels.map((level) => {
-    const part = bigPattern(arabicRemaining, level);
+    const part = convertAtAPowerOfTen(arabicRemaining, level);
     arabicRemaining = part.remainder;
     return part;
   });
