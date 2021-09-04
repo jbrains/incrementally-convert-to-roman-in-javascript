@@ -2,12 +2,7 @@ import { test, skip } from "zora";
 
 const ones = (n) => "I".repeat(n);
 
-const foo = (n) =>
-  n == 5 - 1
-    ? "IV"
-    : n > 0
-    ? ones(n)
-    : "Can't write numbers below 1 as roman numerals. They didn't know how.";
+const foo = (n) => (n == 5 - 1 ? "IV" : n > 0 ? ones(n) : "");
 
 const romanOf = (n) =>
   n > 10
@@ -20,7 +15,9 @@ const romanOf = (n) =>
     ? "V" + ones(n - 5)
     : n == 5
     ? "V"
-    : foo(n);
+    : n > 0
+    ? foo(n)
+    : "Can't write numbers below 1 as roman numerals. They didn't know how.";
 
 const examples = {
   1: "I",
