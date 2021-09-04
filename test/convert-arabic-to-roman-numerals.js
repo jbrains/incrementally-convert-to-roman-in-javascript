@@ -12,11 +12,18 @@ const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
     : "";
 
 const romanOf = (n) => {
-  const howManyTens = Math.floor(n / 10);
+  const howManyHundreds = Math.floor(n / 100);
+  const hundredsPart = howManyHundreds > 0 ? "C" : "";
+  const howManyTens = Math.floor((n - howManyHundreds * 100) / 10);
   const tensPart = bar(howManyTens, "X", "L", "C");
-  const fooPart = bar(n - howManyTens * 10, "I", "V", "X");
+  const fooPart = bar(
+    n - howManyHundreds * 100 - howManyTens * 10,
+    "I",
+    "V",
+    "X"
+  );
 
-  const roman = tensPart + fooPart;
+  const roman = hundredsPart + tensPart + fooPart;
 
   return roman.length == 0
     ? "Can't write numbers below 1 as roman numerals. They didn't know how."
@@ -95,6 +102,7 @@ const examples = {
   95: "XCV",
   98: "XCVIII",
   99: "XCIX",
+  100: "C",
 };
 
 for (const arabic of Object.keys(examples)) {
