@@ -4,9 +4,9 @@ const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
   n == 10 - 1
     ? oneSymbol + "X"
     : n >= 5
-    ? "V" + oneSymbol.repeat(n - 5)
+    ? fiveSymbol + oneSymbol.repeat(n - 5)
     : n == 5 - 1
-    ? oneSymbol + "V"
+    ? oneSymbol + fiveSymbol
     : n > 0
     ? oneSymbol.repeat(n)
     : "";
