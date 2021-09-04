@@ -1,6 +1,6 @@
 import { test, skip } from "zora";
 
-const romanOf = (n) => (n == 2 ? "I".repeat(2) : "I");
+const romanOf = (n) => (n == 2 ? "I".repeat(2) : "I".repeat(1));
 
 const examples = {
   1: "I",
