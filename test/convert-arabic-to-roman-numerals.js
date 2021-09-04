@@ -22,7 +22,7 @@ const romanOf = (n) => {
 
   return howManyTens == 5
     ? "L" + foo(n - howManyTens * 10)
-    : howManyTens == 4
+    : howManyTens == 5 - 1
     ? "XL" + foo(n - howManyTens * 10)
     : n >= howManyTens * 10
     ? tens(howManyTens) + foo(n - howManyTens * 10)
