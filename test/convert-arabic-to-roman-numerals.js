@@ -2,7 +2,7 @@ import { test, skip } from "zora";
 
 const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
   n == 10 - 1
-    ? oneSymbol + "X"
+    ? oneSymbol + tenSymbol
     : n >= 5
     ? fiveSymbol + oneSymbol.repeat(n - 5)
     : n == 5 - 1
