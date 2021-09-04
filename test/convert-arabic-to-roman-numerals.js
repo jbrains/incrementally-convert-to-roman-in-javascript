@@ -20,14 +20,10 @@ const romanOf = (n) => {
   const hundreds = divmod(n, 100);
   const howManyHundreds = hundreds.quotient;
   const hundredsPart = howManyHundreds > 0 ? "C" : "";
-  const howManyTens = Math.floor(hundreds.remainder / 10);
+  const tens = divmod(hundreds.remainder, 10);
+  const howManyTens = tens.quotient;
   const tensPart = bar(howManyTens, "X", "L", "C");
-  const fooPart = bar(
-    n - howManyHundreds * 100 - howManyTens * 10,
-    "I",
-    "V",
-    "X"
-  );
+  const fooPart = bar(tens.remainder, "I", "V", "X");
 
   const roman = hundredsPart + tensPart + fooPart;
 
