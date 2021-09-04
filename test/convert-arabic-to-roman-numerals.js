@@ -1,6 +1,6 @@
 import { test, skip } from "zora";
 
-const foo = (n) =>
+const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
   n == 10 - 1
     ? "IX"
     : n >= 5
@@ -10,6 +10,8 @@ const foo = (n) =>
     : n > 0
     ? "I".repeat(n)
     : "";
+
+const foo = (n) => bar(n, "I", "V", "X");
 
 const romanOf = (n) => {
   const howManyTens = Math.floor(n / 10);
