@@ -21,7 +21,7 @@ const romanOf = (n) =>
   n >= 2 * 10
     ? tens(2) + foo(n - 2 * 10)
     : n >= 1 * 10
-    ? "X" + foo(n - 1 * 10)
+    ? tens(1) + foo(n - 1 * 10)
     : n > 0
     ? foo(n)
     : "Can't write numbers below 1 as roman numerals. They didn't know how.";
