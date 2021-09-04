@@ -105,6 +105,7 @@ const examples = {
   98: "XCVIII",
   99: "XCIX",
   100: "C",
+  139: "CXXXIX",
 };
 
 for (const arabic of Object.keys(examples)) {
