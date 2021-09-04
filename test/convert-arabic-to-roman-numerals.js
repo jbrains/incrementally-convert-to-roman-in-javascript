@@ -13,6 +13,7 @@ const examples = {
   5: "V",
   6: "VI",
   7: "VII",
+  8: "VIII",
 };
 
 for (const arabic of Object.keys(examples)) {
