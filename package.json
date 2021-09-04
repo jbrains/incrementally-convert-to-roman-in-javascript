@@ -1,0 +1,26 @@
+{
+  "name": "roman-numerals-nodejs",
+  "version": "1.0.0",
+  "description": "The Roman Numerals Kata in Javascript",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "pta ./test",
+    "dev": "nodemon test/index.js",
+    "test:only": "ZORA_ONLY=true npm t",
+    "test:coverage": "c8 node test/index.js",
+    "test:pretty-reporter": "ZORA_REPORTER=json node test/index.js | zr",
+    "test:json-pipeline": "ZORA_REPORTER=json node test/index.js | grep '\"pass\":false' | fx .data",
+    "test:tap-pipeline": "node test/index.js | tap-difflet"
+  },
+  "author": "J. B. Rainsberger",
+  "license": "WTFPL",
+  "devDependencies": {
+    "c8": "~7.7.2",
+    "fx": "~20.0.2",
+    "nodemon": "~2.0.7",
+    "pta": "~1.0.0-alpha.2",
+    "tap-difflet": "~0.7.2",
+    "zora": "~5.0.0-beta.1"
+  }
+}
