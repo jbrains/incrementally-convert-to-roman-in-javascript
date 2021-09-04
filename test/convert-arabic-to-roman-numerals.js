@@ -19,7 +19,7 @@ const romanOf = (n) => {
   const howManyTens = Math.floor(n / 10);
 
   const tensPart =
-    howManyTens >= 10 - 1
+    howManyTens == 10 - 1
       ? "XC"
       : howManyTens >= 5
       ? "L" + tens(howManyTens - 5)
