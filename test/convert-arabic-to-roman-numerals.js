@@ -20,9 +20,7 @@ const foo = (n) =>
 const romanOf = (n) => {
   const howManyTens = Math.floor(n / 10);
 
-  return n >= 2 * 10
-    ? tens(2) + foo(n - 2 * 10)
-    : n >= howManyTens * 10
+  return n >= howManyTens * 10
     ? tens(howManyTens) + foo(n - howManyTens * 10)
     : "Can't write numbers below 1 as roman numerals. They didn't know how.";
 };
