@@ -119,7 +119,7 @@ test(`Check division in Javascript`, (t) => {
 
 const divmod = (dividend, divisor) => ({
   quotient: Math.floor(dividend / divisor),
-  remainder: 3,
+  remainder: dividend % divisor,
 });
 
 test(`Since Javascript doesn't provide divmod built in`, (t) => {
