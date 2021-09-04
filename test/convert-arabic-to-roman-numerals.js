@@ -28,13 +28,11 @@ const romanOf = (n) => {
   const hundreds = divmod(n, 100);
   const hundredsPart = bar(hundreds.quotient, "C", "?", "?");
 
-  const tens = divmod(hundreds.remainder, 10);
-  const tensPart = bar(tens.quotient, "X", "L", "C");
-  const xxx = bigPattern(hundreds.remainder, 10, "X", "L", "C");
+  const tensPart = bigPattern(hundreds.remainder, 10, "X", "L", "C");
 
-  const onesPart = bigPattern(xxx.remainder, 1, "I", "V", "X");
+  const onesPart = bigPattern(tensPart.remainder, 1, "I", "V", "X");
 
-  const parts = [hundredsPart, xxx.roman, onesPart.roman];
+  const parts = [hundredsPart, tensPart.roman, onesPart.roman];
 
   const roman = parts.reduce((sum, each) => sum + each, []);
 
