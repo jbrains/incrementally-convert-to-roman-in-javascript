@@ -18,9 +18,7 @@ const foo = (n) =>
     : "";
 
 const romanOf = (n) =>
-  n > 2 * 10
-    ? tens(2) + foo(n - 2 * 10)
-    : n == 2 * 10
+  n >= 2 * 10
     ? tens(2) + foo(n - 2 * 10)
     : n > 10
     ? "X" + foo(n - 10)
