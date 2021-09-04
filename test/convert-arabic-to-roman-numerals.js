@@ -3,7 +3,9 @@ import { test, skip } from "zora";
 const ones = (n) => "I".repeat(n);
 
 const romanOf = (n) =>
-  n == 9
+  n == 10
+    ? "X"
+    : n == 9
     ? "IX"
     : n >= 6
     ? "V" + ones(n - 5)
@@ -23,6 +25,7 @@ const examples = {
   7: "VII",
   8: "VIII",
   9: "IX",
+  10: "X",
 };
 
 for (const arabic of Object.keys(examples)) {
