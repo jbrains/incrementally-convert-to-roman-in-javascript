@@ -13,8 +13,6 @@ const romanOf = (n) =>
     ? "IX"
     : n > 5
     ? "V" + ones(n - 5)
-    : n == 5
-    ? "V"
     : n > 0
     ? foo(n)
     : "Can't write numbers below 1 as roman numerals. They didn't know how.";
