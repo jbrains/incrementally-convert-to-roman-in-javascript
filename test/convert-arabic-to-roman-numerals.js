@@ -2,11 +2,11 @@ import { test, skip } from "zora";
 
 const ones = (n) => "I".repeat(n);
 
-const foo = (n) => (n == 5 - 1 ? "IV" : n > 0 ? ones(n) : "");
+const foo = (n) => (n == 5 ? "V" : n == 5 - 1 ? "IV" : n > 0 ? ones(n) : "");
 
 const romanOf = (n) =>
   n == 15
-    ? "X" + "V"
+    ? "X" + foo(n - 10)
     : n > 10
     ? "X" + foo(n - 10)
     : n == 10
