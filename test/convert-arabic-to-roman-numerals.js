@@ -18,16 +18,20 @@ const foo = (n) =>
 const romanOf = (n) => {
   const howManyTens = Math.floor(n / 10);
 
-  const roman =
+  const tensPart =
     howManyTens >= 10 - 1
-      ? "XC" + foo(n - howManyTens * 10)
+      ? "XC"
       : howManyTens >= 5
-      ? "L" + tens(howManyTens - 5) + foo(n - howManyTens * 10)
+      ? "L" + tens(howManyTens - 5)
       : howManyTens == 5 - 1
-      ? "XL" + foo(n - howManyTens * 10)
+      ? "XL"
       : n >= howManyTens * 10
-      ? tens(howManyTens) + foo(n - howManyTens * 10)
+      ? tens(howManyTens)
       : "";
+
+  const fooPart = foo(n - howManyTens * 10);
+
+  const roman = tensPart + fooPart;
 
   return roman.length == 0
     ? "Can't write numbers below 1 as roman numerals. They didn't know how."
