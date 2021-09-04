@@ -21,7 +21,7 @@ const romanOf = (n) => {
   const howManyTens = Math.floor(n / 10);
 
   return howManyTens > 5
-    ? "LX"
+    ? "LX" + foo(n - howManyTens * 10)
     : howManyTens == 5
     ? "L" + foo(n - howManyTens * 10)
     : howManyTens == 5 - 1
@@ -80,6 +80,11 @@ const examples = {
   58: "LVIII",
   59: "LIX",
   60: "LX",
+  63: "LXIII",
+  64: "LXIV",
+  65: "LXV",
+  68: "LXVIII",
+  69: "LXIX",
 };
 
 for (const arabic of Object.keys(examples)) {
