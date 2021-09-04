@@ -16,10 +16,10 @@ const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
     ? oneSymbol.repeat(n)
     : "";
 
-const bigPattern = (n, powerOfTen, oneSymbol, fiveSymbol, tenSymbol) => {
+const bigPattern = (n, { powerOfTen, one, five, ten }) => {
   const ones = divmod(n, powerOfTen);
   return {
-    roman: bar(ones.quotient, oneSymbol, fiveSymbol, tenSymbol),
+    roman: bar(ones.quotient, one, five, ten),
     remainder: ones.remainder,
   };
 };
@@ -27,17 +27,21 @@ const bigPattern = (n, powerOfTen, oneSymbol, fiveSymbol, tenSymbol) => {
 const romanOf = (n) => {
   // REFACTOR There's a loop here.
 
-  const levels = [{ powerOfTen: 1, one: "I", five: "V", ten: "X" }];
+  const levels = [
+    { powerOfTen: 100, one: "C", five: "D", ten: "M" },
+    { powerOfTen: 10, one: "X", five: "L", ten: "C" },
+    { powerOfTen: 1, one: "I", five: "V", ten: "X" },
+  ];
 
   const hundredsPart =
-    n > 0 ? bigPattern(n, 100, "C", "D", "M") : { roman: "", remainder: 0 };
+    n > 0 ? bigPattern(n, levels[0]) : { roman: "", remainder: 0 };
   const tensPart =
     hundredsPart.remainder > 0
-      ? bigPattern(hundredsPart.remainder, 10, "X", "L", "C")
+      ? bigPattern(hundredsPart.remainder, levels[1])
       : { roman: "", remainder: 0 };
   const onesPart =
     tensPart.remainder > 0
-      ? bigPattern(tensPart.remainder, 1, "I", "V", "X")
+      ? bigPattern(tensPart.remainder, levels[2])
       : { roman: "", remainder: 0 };
 
   const parts = [hundredsPart.roman, tensPart.roman, onesPart.roman];
