@@ -18,7 +18,10 @@ const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
 
 const bigPattern = (n, powerOfTen, oneSymbol, fiveSymbol, tenSymbol) => {
   const ones = divmod(n, powerOfTen);
-  return { roman: bar(ones.quotient, oneSymbol, fiveSymbol, tenSymbol) };
+  return {
+    roman: bar(ones.quotient, oneSymbol, fiveSymbol, tenSymbol),
+    remainder: ones.remainder,
+  };
 };
 
 const romanOf = (n) => {
@@ -27,10 +30,11 @@ const romanOf = (n) => {
 
   const tens = divmod(hundreds.remainder, 10);
   const tensPart = bar(tens.quotient, "X", "L", "C");
+  const xxx = bigPattern(hundreds.remainder, 10, "X", "L", "C");
 
-  const onesPart = bigPattern(tens.remainder, 1, "I", "V", "X");
+  const onesPart = bigPattern(xxx.remainder, 1, "I", "V", "X");
 
-  const parts = [hundredsPart, tensPart, onesPart.roman];
+  const parts = [hundredsPart, xxx.roman, onesPart.roman];
 
   const roman = parts.reduce((sum, each) => sum + each, []);
 
