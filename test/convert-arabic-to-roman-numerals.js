@@ -18,12 +18,14 @@ const foo = (n) =>
     : "";
 
 const romanOf = (n) => {
+  const howManyTens = Math.floor(n / 10);
+
   return n >= 2 * 10
     ? tens(2) + foo(n - 2 * 10)
     : n >= 1 * 10
     ? tens(1) + foo(n - 1 * 10)
-    : n >= 0 * 10
-    ? tens(0) + foo(n)
+    : n >= howManyTens * 10
+    ? tens(howManyTens) + foo(n)
     : "Can't write numbers below 1 as roman numerals. They didn't know how.";
 };
 
