@@ -17,10 +17,10 @@ const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
     : "";
 
 const bigPattern = (n, { powerOfTen, one, five, ten }) => {
-  const ones = divmod(n, powerOfTen);
+  const result = divmod(n, powerOfTen);
   return {
-    roman: bar(ones.quotient, one, five, ten),
-    remainder: ones.remainder,
+    roman: bar(result.quotient, one, five, ten),
+    remainder: result.remainder,
   };
 };
 
