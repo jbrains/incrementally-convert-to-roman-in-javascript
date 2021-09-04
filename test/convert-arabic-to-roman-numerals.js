@@ -5,6 +5,7 @@ const divmod = (dividend, divisor) => ({
   remainder: dividend % divisor,
 });
 
+// CONTRACT 0 <= n < 10
 const convertWithSubtractiveRule = (n, oneSymbol, fiveSymbol, tenSymbol) =>
   n == 10 - 1
     ? oneSymbol + tenSymbol
