@@ -25,24 +25,11 @@ const bigPattern = (n, { powerOfTen, one, five, ten }) => {
 };
 
 const romanOf = (n) => {
-  // REFACTOR There's a loop here.
-
   const levels = [
     { powerOfTen: 100, one: "C", five: "D", ten: "M" },
     { powerOfTen: 10, one: "X", five: "L", ten: "C" },
     { powerOfTen: 1, one: "I", five: "V", ten: "X" },
   ];
-
-  const level0Part =
-    n > 0 ? bigPattern(n, levels[0]) : { roman: "", remainder: 0 };
-  const level1Part =
-    level0Part.remainder > 0
-      ? bigPattern(level0Part.remainder, levels[1])
-      : { roman: "", remainder: 0 };
-  const level2Part =
-    level1Part.remainder > 0
-      ? bigPattern(level1Part.remainder, levels[2])
-      : { roman: "", remainder: 0 };
 
   var arabicRemaining = n;
   const newParts = levels.map((level) => {
@@ -50,8 +37,6 @@ const romanOf = (n) => {
     arabicRemaining = xxx.remainder;
     return xxx;
   });
-
-  const parts = [level0Part.roman, level1Part.roman, level2Part.roman];
 
   const roman = newParts
     .map((each) => each.roman)
