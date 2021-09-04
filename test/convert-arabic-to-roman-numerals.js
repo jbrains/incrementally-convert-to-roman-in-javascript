@@ -5,13 +5,13 @@ const ones = (n) => "I".repeat(n);
 const romanOf = (n) =>
   n == 10
     ? "X"
-    : n == 9
+    : n == 10 - 1
     ? "IX"
     : n >= 6
     ? "V" + ones(n - 5)
     : n == 5
     ? "V"
-    : n == 4
+    : n == 5 - 1
     ? "IV"
     : n >= 1
     ? ones(n)
