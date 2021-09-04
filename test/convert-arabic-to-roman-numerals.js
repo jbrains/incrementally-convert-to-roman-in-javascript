@@ -55,6 +55,7 @@ const examples = {
   27: "XXVII",
   28: "XXVIII",
   29: "XXIX",
+  30: "XXX",
 };
 
 for (const arabic of Object.keys(examples)) {
