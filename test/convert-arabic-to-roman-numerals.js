@@ -1,9 +1,10 @@
-import { test } from "zora";
+import { test, skip } from "zora";
 
-const romanOf = (n) => (n == 2 ? "II" : "I");
+const romanOf = (n) => (n == 2 ? "I".repeat(2) : "I");
 
 const examples = {
   1: "I",
+  2: "II",
 };
 
 for (const arabic of Object.keys(examples)) {
@@ -12,6 +13,6 @@ for (const arabic of Object.keys(examples)) {
   });
 }
 
-test(`Inbox`, (t) => {
-  t.equals("II", romanOf(2));
+skip(`Inbox`, (t) => {
+  t.equals("III", romanOf(3));
 });
