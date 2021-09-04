@@ -33,9 +33,9 @@ const romanOf = (n) => {
 
   var arabicRemaining = n;
   const parts = levels.map((level) => {
-    const xxx = bigPattern(arabicRemaining, level);
-    arabicRemaining = xxx.remainder;
-    return xxx;
+    const part = bigPattern(arabicRemaining, level);
+    arabicRemaining = part.remainder;
+    return part;
   });
 
   const roman = parts
