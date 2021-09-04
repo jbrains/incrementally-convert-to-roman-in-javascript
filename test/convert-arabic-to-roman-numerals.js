@@ -32,13 +32,13 @@ const romanOf = (n) => {
   ];
 
   var arabicRemaining = n;
-  const newParts = levels.map((level) => {
+  const parts = levels.map((level) => {
     const xxx = bigPattern(arabicRemaining, level);
     arabicRemaining = xxx.remainder;
     return xxx;
   });
 
-  const roman = newParts
+  const roman = parts
     .map((each) => each.roman)
     .reduce((sum, each) => sum + each, []);
 
