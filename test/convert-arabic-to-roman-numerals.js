@@ -26,7 +26,9 @@ const romanOf = (n) => {
   const ones = divmod(tens.remainder, 1);
   const onesPart = bar(ones.quotient, "I", "V", "X");
 
-  const roman = hundredsPart + tensPart + onesPart;
+  const parts = [hundredsPart, tensPart, onesPart];
+
+  const roman = parts.reduce((sum, each) => sum + each, []);
 
   return roman.length == 0
     ? "Can't write numbers below 1 as roman numerals. They didn't know how."
