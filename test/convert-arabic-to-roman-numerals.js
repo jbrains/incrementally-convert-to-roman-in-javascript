@@ -7,9 +7,7 @@ const ones = (n) => bar("I", n);
 const foo = (n) =>
   n == 10 - 1
     ? "IX"
-    : n > 5
-    ? "V" + ones(n - 5)
-    : n == 5
+    : n >= 5
     ? "V" + ones(n - 5)
     : n == 5 - 1
     ? "IV"
