@@ -10,7 +10,7 @@ const foo = (n) =>
     : n > 5
     ? "V" + ones(n - 5)
     : n == 5
-    ? "V"
+    ? "V" + ones(n - 5)
     : n == 5 - 1
     ? "IV"
     : n > 0
