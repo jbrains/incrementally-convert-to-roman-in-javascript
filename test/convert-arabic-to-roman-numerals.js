@@ -18,15 +18,20 @@ const foo = (n) =>
 const romanOf = (n) => {
   const howManyTens = Math.floor(n / 10);
 
-  return howManyTens >= 10 - 1
-    ? "XC" + foo(n - howManyTens * 10)
-    : howManyTens >= 5
-    ? "L" + tens(howManyTens - 5) + foo(n - howManyTens * 10)
-    : howManyTens == 5 - 1
-    ? "XL" + foo(n - howManyTens * 10)
-    : n >= howManyTens * 10
-    ? tens(howManyTens) + foo(n - howManyTens * 10)
-    : "Can't write numbers below 1 as roman numerals. They didn't know how.";
+  const roman =
+    howManyTens >= 10 - 1
+      ? "XC" + foo(n - howManyTens * 10)
+      : howManyTens >= 5
+      ? "L" + tens(howManyTens - 5) + foo(n - howManyTens * 10)
+      : howManyTens == 5 - 1
+      ? "XL" + foo(n - howManyTens * 10)
+      : n >= howManyTens * 10
+      ? tens(howManyTens) + foo(n - howManyTens * 10)
+      : "";
+
+  return roman.length == 0
+    ? "Can't write numbers below 1 as roman numerals. They didn't know how."
+    : roman;
 };
 
 const examples = {
