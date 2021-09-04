@@ -20,9 +20,7 @@ const romanOf = (n) => {
 
   return howManyTens >= 10 - 1
     ? "XC" + foo(n - howManyTens * 10)
-    : howManyTens > 5
-    ? "L" + tens(howManyTens - 5) + foo(n - howManyTens * 10)
-    : howManyTens == 5
+    : howManyTens >= 5
     ? "L" + tens(howManyTens - 5) + foo(n - howManyTens * 10)
     : howManyTens == 5 - 1
     ? "XL" + foo(n - howManyTens * 10)
