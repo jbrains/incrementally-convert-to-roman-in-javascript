@@ -2,13 +2,13 @@ import { test, skip } from "zora";
 
 const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
   n == 10 - 1
-    ? "IX"
+    ? oneSymbol + "X"
     : n >= 5
-    ? "V" + "I".repeat(n - 5)
+    ? "V" + oneSymbol.repeat(n - 5)
     : n == 5 - 1
-    ? "IV"
+    ? oneSymbol + "V"
     : n > 0
-    ? "I".repeat(n)
+    ? oneSymbol.repeat(n)
     : "";
 
 const foo = (n) => bar(n, "I", "V", "X");
