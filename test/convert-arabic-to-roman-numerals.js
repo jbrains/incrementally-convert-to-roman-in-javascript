@@ -6,7 +6,7 @@ const foo = (n) => (n == 5 - 1 ? "IV" : n > 0 ? ones(n) : "");
 
 const romanOf = (n) =>
   n == 15
-    ? "XV"
+    ? "X" + "V"
     : n > 10
     ? "X" + foo(n - 10)
     : n == 10
