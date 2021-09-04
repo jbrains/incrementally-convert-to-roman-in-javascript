@@ -16,16 +16,7 @@ const foo = (n) => bar(n, "I", "V", "X");
 const romanOf = (n) => {
   const howManyTens = Math.floor(n / 10);
 
-  const tensPart =
-    howManyTens == 10 - 1
-      ? "XC"
-      : howManyTens >= 5
-      ? "L" + "X".repeat(howManyTens - 5)
-      : howManyTens == 5 - 1
-      ? "XL"
-      : howManyTens > 0
-      ? "X".repeat(howManyTens)
-      : "";
+  const tensPart = bar(howManyTens, "X", "L", "C");
 
   const fooPart = foo(n - howManyTens * 10);
 
