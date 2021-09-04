@@ -64,7 +64,11 @@ const examples = {
   38: "XXXVIII",
   39: "XXXIX",
   40: "XL",
-  41: "XLI",
+  43: "XLIII",
+  44: "XLIV",
+  45: "XLV",
+  48: "XLVIII",
+  49: "XLIX",
 };
 
 for (const arabic of Object.keys(examples)) {
