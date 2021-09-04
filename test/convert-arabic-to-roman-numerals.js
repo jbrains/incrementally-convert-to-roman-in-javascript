@@ -19,8 +19,10 @@ const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
 const romanOf = (n) => {
   const hundreds = divmod(n, 100);
   const hundredsPart = bar(hundreds.quotient, "C", "?", "?");
+
   const tens = divmod(hundreds.remainder, 10);
   const tensPart = bar(tens.quotient, "X", "L", "C");
+
   const ones = divmod(tens.remainder, 1);
   const onesPart = bar(ones.quotient, "I", "V", "X");
 
