@@ -1,5 +1,10 @@
 import { test, skip } from "zora";
 
+const divmod = (dividend, divisor) => ({
+  quotient: Math.floor(dividend / divisor),
+  remainder: dividend % divisor,
+});
+
 const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
   n == 10 - 1
     ? oneSymbol + tenSymbol
@@ -115,11 +120,6 @@ test(`Check division in Javascript`, (t) => {
   t.equals(0, Math.floor(1 / 10));
   t.equals(0, Math.floor(9 / 10));
   t.equals(4, Math.floor(49 / 10));
-});
-
-const divmod = (dividend, divisor) => ({
-  quotient: Math.floor(dividend / divisor),
-  remainder: dividend % divisor,
 });
 
 test(`Since Javascript doesn't provide divmod built in`, (t) => {
