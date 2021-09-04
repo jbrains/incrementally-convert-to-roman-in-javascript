@@ -13,9 +13,7 @@ const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
 
 const romanOf = (n) => {
   const howManyTens = Math.floor(n / 10);
-
   const tensPart = bar(howManyTens, "X", "L", "C");
-
   const fooPart = bar(n - howManyTens * 10, "I", "V", "X");
 
   const roman = tensPart + fooPart;
