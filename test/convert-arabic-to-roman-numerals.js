@@ -5,6 +5,7 @@ const romanOf = (n) => "I".repeat(n);
 const examples = {
   1: "I",
   2: "II",
+  3: "III",
 };
 
 for (const arabic of Object.keys(examples)) {
