@@ -25,7 +25,7 @@ const romanOf = (n) => {
       ? "L" + tens(howManyTens - 5)
       : howManyTens == 5 - 1
       ? "XL"
-      : n >= howManyTens * 10
+      : howManyTens > 0
       ? tens(howManyTens)
       : "";
 
