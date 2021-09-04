@@ -26,7 +26,7 @@ const bigPattern = (n, powerOfTen, oneSymbol, fiveSymbol, tenSymbol) => {
 
 const romanOf = (n) => {
   // REFACTOR There's a loop here.
-  const hundredsPart = bigPattern(n, 100, "C", "?", "?");
+  const hundredsPart = bigPattern(n, 100, "C", "D", "?");
   const tensPart = bigPattern(hundredsPart.remainder, 10, "X", "L", "C");
   const onesPart = bigPattern(tensPart.remainder, 1, "I", "V", "X");
 
@@ -114,6 +114,7 @@ const examples = {
   100: "C",
   139: "CXXXIX",
   214: "CCXIV",
+  573: "DLXXIII",
 };
 
 for (const arabic of Object.keys(examples)) {
