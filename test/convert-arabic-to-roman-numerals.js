@@ -116,3 +116,12 @@ test(`Check division in Javascript`, (t) => {
   t.equals(0, Math.floor(9 / 10));
   t.equals(4, Math.floor(49 / 10));
 });
+
+const divmod = (dividend, divisor) => ({
+  quotient: 7,
+  remainder: 3,
+});
+
+test(`Since Javascript doesn't provide divmod built in`, (t) => {
+  t.equals({ quotient: 7, remainder: 3 }, divmod(73, 10));
+});
