@@ -14,9 +14,7 @@ const foo = (n) =>
     : "";
 
 const romanOf = (n) =>
-  n == 16
-    ? "X" + foo(n - 10)
-    : n > 10
+  n > 10
     ? "X" + foo(n - 10)
     : n == 10
     ? "X"
