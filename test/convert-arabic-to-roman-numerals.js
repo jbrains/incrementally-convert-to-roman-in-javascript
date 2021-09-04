@@ -25,7 +25,7 @@ const convertAtAPowerOfTen = (n, { powerOfTen, one, five, ten }) => {
 };
 
 const romanOf = (n) => {
-  const levels = [
+  const powersOfTen = [
     { powerOfTen: 100, one: "C", five: "D", ten: "M" },
     { powerOfTen: 10, one: "X", five: "L", ten: "C" },
     { powerOfTen: 1, one: "I", five: "V", ten: "X" },
@@ -33,7 +33,7 @@ const romanOf = (n) => {
 
   // REFACTOR State monad, one day, when I understand it better.
   var arabicRemaining = n;
-  const parts = levels.map((level) => {
+  const parts = powersOfTen.map((level) => {
     const part = convertAtAPowerOfTen(arabicRemaining, level);
     arabicRemaining = part.remainder;
     return part;
