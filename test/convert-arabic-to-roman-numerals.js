@@ -28,11 +28,9 @@ const romanOf = (n) => {
   const tens = divmod(hundreds.remainder, 10);
   const tensPart = bar(tens.quotient, "X", "L", "C");
 
-  const ones = divmod(tens.remainder, 1);
-  const onesPart = bar(ones.quotient, "I", "V", "X");
-  const xxx = bigPattern(tens.remainder, 1, "I", "V", "X");
+  const onesPart = bigPattern(tens.remainder, 1, "I", "V", "X");
 
-  const parts = [hundredsPart, tensPart, xxx];
+  const parts = [hundredsPart, tensPart, onesPart];
 
   const roman = parts.reduce((sum, each) => sum + each, []);
 
