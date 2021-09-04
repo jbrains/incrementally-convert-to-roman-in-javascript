@@ -5,7 +5,7 @@ const divmod = (dividend, divisor) => ({
   remainder: dividend % divisor,
 });
 
-const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
+const convertWithSubtractiveRule = (n, oneSymbol, fiveSymbol, tenSymbol) =>
   n == 10 - 1
     ? oneSymbol + tenSymbol
     : n >= 5
@@ -19,7 +19,7 @@ const bar = (n, oneSymbol, fiveSymbol, tenSymbol) =>
 const convertAtAPowerOfTen = (n, { powerOfTen, one, five, ten }) => {
   const result = divmod(n, powerOfTen);
   return {
-    roman: bar(result.quotient, one, five, ten),
+    roman: convertWithSubtractiveRule(result.quotient, one, five, ten),
     remainder: result.remainder,
   };
 };
