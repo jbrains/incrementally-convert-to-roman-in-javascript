@@ -33,18 +33,18 @@ const romanOf = (n) => {
     { powerOfTen: 1, one: "I", five: "V", ten: "X" },
   ];
 
-  const hundredsPart =
+  const level0Part =
     n > 0 ? bigPattern(n, levels[0]) : { roman: "", remainder: 0 };
-  const tensPart =
-    hundredsPart.remainder > 0
-      ? bigPattern(hundredsPart.remainder, levels[1])
+  const level1Part =
+    level0Part.remainder > 0
+      ? bigPattern(level0Part.remainder, levels[1])
       : { roman: "", remainder: 0 };
-  const onesPart =
-    tensPart.remainder > 0
-      ? bigPattern(tensPart.remainder, levels[2])
+  const level2Part =
+    level1Part.remainder > 0
+      ? bigPattern(level1Part.remainder, levels[2])
       : { roman: "", remainder: 0 };
 
-  const parts = [hundredsPart.roman, tensPart.roman, onesPart.roman];
+  const parts = [level0Part.roman, level1Part.roman, level2Part.roman];
 
   const roman = parts.reduce((sum, each) => sum + each, []);
 
