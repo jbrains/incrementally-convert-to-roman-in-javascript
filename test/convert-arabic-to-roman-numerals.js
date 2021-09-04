@@ -27,7 +27,7 @@ const convertAtAPowerOfTen = (n, { powerOfTen, one, five, ten }) => {
 
 const romanOf = (n) => {
   const powersOfTen = [
-    { powerOfTen: 1000, one: "M", five: "V\u0305", ten: "?" },
+    { powerOfTen: 1000, one: "M", five: "V\u0305", ten: "X\u0305" },
     { powerOfTen: 100, one: "C", five: "D", ten: "M" },
     { powerOfTen: 10, one: "X", five: "L", ten: "C" },
     { powerOfTen: 1, one: "I", five: "V", ten: "X" },
@@ -129,6 +129,7 @@ const examples = {
   971: "CMLXXI",
   3814: "MMMDCCCXIV",
   4999: "MV\u0305CMXCIX",
+  9999: "MX\u0305CMXCIX",
 };
 
 for (const arabic of Object.keys(examples)) {
