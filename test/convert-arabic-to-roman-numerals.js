@@ -1,7 +1,5 @@
 import { test, skip } from "zora";
 
-const tens = (n) => "X".repeat(n);
-
 const foo = (n) =>
   n == 10 - 1
     ? "IX"
@@ -20,11 +18,11 @@ const romanOf = (n) => {
     howManyTens == 10 - 1
       ? "XC"
       : howManyTens >= 5
-      ? "L" + tens(howManyTens - 5)
+      ? "L" + "X".repeat(howManyTens - 5)
       : howManyTens == 5 - 1
       ? "XL"
       : howManyTens > 0
-      ? tens(howManyTens)
+      ? "X".repeat(howManyTens)
       : "";
 
   const fooPart = foo(n - howManyTens * 10);
