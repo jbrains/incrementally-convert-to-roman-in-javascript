@@ -1,8 +1,7 @@
 import { test, skip } from "zora";
 
-const bar = (symbol, n) => symbol.repeat(n);
-const tens = (n) => bar("X", n);
-const ones = (n) => bar("I", n);
+const tens = (n) => "X".repeat(n);
+const ones = (n) => "I".repeat(n);
 
 const foo = (n) =>
   n == 10 - 1
