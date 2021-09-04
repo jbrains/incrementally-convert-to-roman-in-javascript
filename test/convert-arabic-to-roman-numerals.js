@@ -30,7 +30,10 @@ const romanOf = (n) => {
   const levels = [{ powerOfTen: 1, one: "I", five: "V", ten: "X" }];
 
   const hundredsPart = bigPattern(n, 100, "C", "D", "M");
-  const tensPart = bigPattern(hundredsPart.remainder, 10, "X", "L", "C");
+  const tensPart =
+    hundredsPart.remainder > 0
+      ? bigPattern(hundredsPart.remainder, 10, "X", "L", "C")
+      : { roman: "", remainder: 0 };
   const onesPart =
     tensPart.remainder > 0
       ? bigPattern(tensPart.remainder, 1, "I", "V", "X")
