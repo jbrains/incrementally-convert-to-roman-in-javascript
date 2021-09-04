@@ -65,6 +65,8 @@ for (const arabic of Object.keys(examples)) {
   });
 }
 
-skip(`Inbox`, (t) => {
-  t.equals("III", romanOf(3));
+test(`Check division in Javascript`, (t) => {
+  t.equals(0, Math.floor(1 / 10));
+  t.equals(0, Math.floor(9 / 10));
+  t.equals(4, Math.floor(49 / 10));
 });
