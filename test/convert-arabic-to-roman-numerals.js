@@ -26,9 +26,15 @@ const bigPattern = (n, powerOfTen, oneSymbol, fiveSymbol, tenSymbol) => {
 
 const romanOf = (n) => {
   // REFACTOR There's a loop here.
+
+  const levels = [{ powerOfTen: 1, one: "I", five: "V", ten: "X" }];
+
   const hundredsPart = bigPattern(n, 100, "C", "D", "M");
   const tensPart = bigPattern(hundredsPart.remainder, 10, "X", "L", "C");
-  const onesPart = bigPattern(tensPart.remainder, 1, "I", "V", "X");
+  const onesPart =
+    tensPart.remainder > 0
+      ? bigPattern(tensPart.remainder, 1, "I", "V", "X")
+      : { roman: "", remainder: 0 };
 
   const parts = [hundredsPart.roman, tensPart.roman, onesPart.roman];
 
