@@ -1,5 +1,6 @@
 import { test, skip } from "zora";
 
+const tens = (n) => "X".repeat(n);
 const ones = (n) => "I".repeat(n);
 
 const foo = (n) =>
@@ -17,7 +18,7 @@ const foo = (n) =>
 
 const romanOf = (n) =>
   n == 2 * 10
-    ? "XX"
+    ? tens(2)
     : n > 10
     ? "X" + foo(n - 10)
     : n == 10
