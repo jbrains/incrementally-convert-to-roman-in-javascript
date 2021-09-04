@@ -17,7 +17,7 @@ const foo = (n) =>
 
 const romanOf = (n) =>
   n == 19
-    ? "X" + "IX"
+    ? "X" + foo(n - 10)
     : n > 10
     ? "X" + foo(n - 10)
     : n == 10
