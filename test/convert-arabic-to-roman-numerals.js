@@ -10,9 +10,7 @@ const foo = (n) =>
     : "Can't write numbers below 1 as roman numerals. They didn't know how.";
 
 const romanOf = (n) =>
-  n == 10 + 5 - 1
-    ? "X" + foo(n - 10)
-    : n > 10
+  n > 10
     ? "X" + foo(n - 10)
     : n == 10
     ? "X"
