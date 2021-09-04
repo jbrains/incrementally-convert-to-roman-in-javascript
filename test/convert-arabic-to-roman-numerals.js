@@ -20,7 +20,9 @@ const foo = (n) =>
 const romanOf = (n) => {
   const howManyTens = Math.floor(n / 10);
 
-  return n >= howManyTens * 10
+  return howManyTens == 4
+    ? "XL"
+    : n >= howManyTens * 10
     ? tens(howManyTens) + foo(n - howManyTens * 10)
     : "Can't write numbers below 1 as roman numerals. They didn't know how.";
 };
@@ -61,6 +63,7 @@ const examples = {
   35: "XXXV",
   38: "XXXVIII",
   39: "XXXIX",
+  40: "XL",
 };
 
 for (const arabic of Object.keys(examples)) {
